@@ -1,0 +1,460 @@
+# =============================================================================
+# AI Trading Bot - Comprehensive .gitignore
+# Protects secrets and follows security best practices
+# =============================================================================
+
+# =============================================================================
+# SECRETS & CREDENTIALS (CRITICAL - NEVER COMMIT THESE)
+# =============================================================================
+
+# Environment variables (contains API keys, secrets, tokens)
+.env
+.env.*
+!.env.example
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+.env.staging
+
+# API Keys and Secrets (additional protection)
+*api*key*
+*api*secret*
+*secret*.txt
+*secret*.yaml
+*secret*.yml
+*secret*.json
+*credentials*
+*secrets*
+*token*.txt
+*token*.yaml
+*token*.yml
+*token*.json
+
+# Configuration files that might contain secrets
+config/secrets.yaml
+config/secrets.yml
+config/local.yaml
+config/local.yml
+config/production.yaml
+config/production.yml
+*.secret.yaml
+*.secret.yml
+
+# =============================================================================
+# DATABASE FILES (contains trading data)
+# =============================================================================
+
+# SQLite databases
+*.db
+*.db-shm
+*.db-wal
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+
+# Database directories
+data/
+*.db.backup
+*.db.bak
+*.db.old
+
+# Database dumps
+*.sql
+*.dump
+*.backup
+
+# =============================================================================
+# LOGS & MONITORING (may contain sensitive data)
+# =============================================================================
+
+# Log files
+logs/
+*.log
+*.log.*
+*.log.gz
+*.log.bz2
+stress_test.log
+*.out
+
+# Log directories
+log/
+*.log.*
+
+# =============================================================================
+# MODELS & ML ARTIFACTS
+# =============================================================================
+
+# Model files (may contain proprietary models)
+# Ignore all model files but keep directory structure
+models/*.tflite
+models/*.h5
+models/*.pb
+models/*.pkl
+models/*.pickle
+models/*.pt
+models/*.pth
+models/*.onnx
+models/*.savedmodel
+models/trained/
+models/checkpoints/
+
+# Keep .gitkeep to preserve directory structure
+!models/.gitkeep
+!data/.gitkeep
+!logs/.gitkeep
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+test-results/
+junit.xml
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile.lock
+
+# PEP 582
+__pypackages__/
+
+# Celery stuff
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# mkdocs documentation
+/site
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Pyre type checker
+.pyre/
+
+# =============================================================================
+# IDE & EDITORS
+# =============================================================================
+
+# VSCode
+.vscode/
+*.code-workspace
+.history/
+
+# PyCharm / IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+.\#*
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# =============================================================================
+# OPERATING SYSTEM FILES
+# =============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# DOCKER
+# =============================================================================
+
+# Docker volumes and data
+docker-data/
+.dockerignore
+
+# Docker Compose override files
+docker-compose.override.yml
+docker-compose.*.yml
+!docker-compose.yml
+
+# =============================================================================
+# TEMPORARY & CACHE FILES
+# =============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.swp
+*.swo
+*~
+
+# Cache directories
+.cache/
+*.cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =============================================================================
+# TRADING BOT SPECIFIC
+# =============================================================================
+
+# Trading data and backups
+data/
+backups/
+*.backup
+*.bak
+
+# Test data
+test_data/
+test_output/
+*.test.db
+
+# Performance profiling
+*.prof
+*.pstats
+profile_results/
+
+# Stress test outputs
+stress_test_*.log
+stress_test_*.json
+stress_test_results/
+
+# =============================================================================
+# SECURITY & COMPLIANCE
+# =============================================================================
+
+# Private keys
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+id_rsa
+id_rsa.pub
+id_dsa
+id_dsa.pub
+*.gpg
+*.asc
+
+# Security scan results
+security-report.txt
+vulnerability-report.*
+*.security
+
+# =============================================================================
+# MISC
+# =============================================================================
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# Compiled binaries
+*.exe
+*.dll
+*.dylib
+
+# Node modules (if any frontend tools)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =============================================================================
+# KEEP THESE (Important files that should be tracked)
+# =============================================================================
+
+# Keep example files
+!.env.example
+!config/config.yaml.example
+!*.example
+
+# Keep documentation
+!README.md
+!*.md
+
+# Keep requirements
+!requirements.txt
+!requirements-dev.txt
+
+# Keep Docker files
+!Dockerfile
+!docker-compose.yml
+!.dockerignore
+
+# Keep CI/CD configs
+!.github/
+!.gitlab-ci.yml
+!.travis.yml
+
+# Keep test configs
+!pytest.ini
+!tox.ini
+!.coveragerc
+
+# Keep empty directories with .gitkeep
+!.gitkeep
